@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Happy Birthday, Albab ♡</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     PAGE 1 — BIRTHDAY WELCOME
+===================================================== -->
+
+<section class="page active" id="welcomePage">
+
+  <div class="decor cloud cloud-one">☁</div>
+  <div class="decor cloud cloud-two">☁</div>
+
+  <div class="decor star star-one">✦</div>
+  <div class="decor star star-two">✧</div>
+  <div class="decor star star-three">✦</div>
+
+  <div class="decor flower flower-one">✿</div>
+  <div class="decor flower flower-two">❀</div>
+
+  <div class="welcome-content">
+
+    <p class="small-header">
+      THE DAY IS FINALLY HERE
+    </p>
+
+    <h1>
+      Happy Birthday,<br>
+      Albab!!!
+    </h1>
+
+    <div class="welcome-divider">
+      ✦ ❀ ✦
+    </div>
+
+    <p class="welcome-message">
+      8th of September is finally here to put an end to Albab week.
+      And after 7 days of stupid challanges and gifts,
+    
+    </p>
+
+    <p class="welcome-message smaller">
+      you've finally made it to the big day. ♡
+    </p>
+
+    <p class="question">
+      Are you ready for your final adventure?
+    </p>
+
+    <div class="choice-buttons">
+
+      <button
+        class="welcome-yes"
+        onclick="goToPage('introPage')"
+      >
+        YES ✦
+      </button>
+
+      <button
+        class="welcome-no"
+        onclick="goToPage('introPage')"
+      >
+        YES ✿
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 2 — ROYAL LETTER / INTRODUCTION
+===================================================== -->
+
+<section class="page" id="introPage">
+
+  <div class="parchment-wrapper">
+
+    <div class="parchment-roll parchment-roll-top"></div>
+
+    <div class="parchment">
+
+      <div class="parchment-decoration">
+        ✦ ❀ ✦
+      </div>
+
+      <p class="small-header">
+        A ROYAL MESSAGE
+      </p>
+
+      <h2>
+        To Albab,
+      </h2>
+
+      <div class="royal-letter">
+
+        <p>
+         WELCOME ULLUUUUUU 🧑‍🩰
+        </p>
+
+        <p>
+          So, the wait is over.
+          After a small week of surprises and
+          challenges, you have
+          officially reached the end of this birthday
+          adventure.
+        </p>
+
+        <p>
+          Every single
+          thing here was put together because I wanted
+          your birthday to feel as special as you are
+          to me. So, I hope you liked it.
+        </p>
+
+        <p class="royal-emphasis">
+          But the kingdom has not quite finished
+          preparing your celebration.
+        </p>
+
+        <p>
+          Honouring the final say, There are still four little places waiting
+          for you inside our magic
+          village. Each one has
+          something different hidden inside it:
+          something to discover, something to read,
+          something to watch, and something to claim.
+        </p>
+
+        <p>
+          So, brave traveller, step into the village
+          and explore at your own pace!!
+        </p>
+
+        <p class="royal-emphasis">
+          Your final adventure awaits.
+        </p>
+
+        <p>
+          Shall we begin?
+        </p>
+
+      </div>
+
+      <div class="choice-buttons parchment-buttons">
+
+        <button
+          onclick="goToPage('villagePage')"
+        >
+          hell yeah ✦
+        </button>
+
+        <button
+          onclick="goToPage('villagePage')"
+        >
+          hell yeah ✿
+        </button>
+
+      </div>
+
+      <div class="parchment-decoration bottom">
+        ❀ ✦ ❀
+      </div>
+
+    </div>
+
+    <div class="parchment-roll parchment-roll-bottom"></div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 3 — MAGIC VILLAGE
+===================================================== -->
+
+<section class="page" id="villagePage">
+
+  <div class="village-sky">
+
+    <div class="village-cloud cloud-left">
+      ☁
+    </div>
+
+    <div class="village-cloud cloud-right">
+      ☁
+    </div>
+
+    <div class="village-title">
+
+      <p class="small-header">
+        ENTER THE KINGDOM
+      </p>
+
+      <h2>
+        The Magic Village
+      </h2>
+
+      <p>
+        Four little places.<br>
+        Four little surprises.
+      </p>
+
+    </div>
+
+
+    <div class="village">
+
+
+      <!-- =================================================
+           BAKERY
+      ================================================= -->
+
+      <button
+        class="village-building"
+        onclick="openBuilding('kitchen')"
+      >
+
+        <img
+          src="https://i.ibb.co/3yZgD1pD/IMG-0878.png"
+          alt="Alvina's Bakery"
+        >
+
+        <span class="building-label">
+          Alvina's Bakery
+        </span>
+
+      </button>
+
+
+      <!-- =================================================
+           BOOKSTORE
+      ================================================= -->
+
+      <button
+        class="village-building"
+        onclick="openBuilding('library')"
+      >
+
+        <img
+          src="https://i.ibb.co/gbvBt8Fr/IMG-0879.png"
+          alt="The Bookstore"
+        >
+
+        <span class="building-label">
+          The Bookstore
+        </span>
+
+      </button>
+
+
+      <!-- =================================================
+           THEATRE
+      ================================================= -->
+
+      <button
+        class="village-building"
+        onclick="openBuilding('cafe')"
+      >
+
+        <img
+          src="https://i.ibb.co/j9CMZc3X/IMG-0865.png"
+          alt="The Theatre"
+        >
+
+        <span class="building-label">
+          The Theatre
+        </span>
+
+      </button>
+
+
+      <!-- =================================================
+           ANTIQUE SHOP
+      ================================================= -->
+
+      <button
+        class="village-building"
+        onclick="openBuilding('antique')"
+      >
+
+        <img
+          src="https://i.ibb.co/dwQrQ4NG/IMG-0880.png"
+          alt="Alvina's Antique Shop"
+        >
+
+        <span class="building-label">
+          Alvina's Antiques
+        </span>
+
+      </button>
+
+    </div>
+
+
+    <p class="village-hint">
+      ✦ Tap a place to explore ✦
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 4 — ALVINA'S BAKERY
+===================================================== -->
+
+<section class="page" id="kitchenPage">
+
+  <button
+    class="back-button"
+    onclick="goToPage('villagePage')"
+  >
+    ← Back to the village
+  </button>
+
+
+  <div
+    class="kitchen-scene"
+    style="background-image:url('https://i.ibb.co/RTmLpjVF/IMG-0823.jpg');"
+  >
+
+    <div class="kitchen-overlay">
+
+
+      <!-- ROOM HEADING -->
+
+      <div class="room-heading">
+
+        <p class="small-header">
+          WELCOME TO
+        </p>
+
+        <h2>
+          Alvina's Bakery
+        </h2>
+
+        <p>
+          Today's special: Choco Truffle Cake
+        </p>
+
+      </div>
+
+
+
+      <!-- =================================================
+           INSTRUCTIONS
+      ================================================= -->
+
+      <div
+        class="instruction-card"
+        id="kitchenInstructions"
+      >
+
+        <div class="mini-cake-icon">
+          🍰
+        </div>
+
+        <h3>
+          Today's Special
+        </h3>
+
+        <p>
+          Your mission is to make your very own
+          <strong>Choco Truffle Cake.</strong>
+        </p>
+
+        <p>
+          Add the ingredients in the correct order,
+          mix your batter, put it in the oven,
+          and see what you've created.
+        </p>
+
+        <p class="tiny-note">
+          Don't worry. I promise this one is edible.
+          Probably.
+        </p>
+
+        <button
+          class="primary-button"
+          onclick="startCakeGame()"
+        >
+          Let's Bake ✦
+        </button>
+
+      </div>
+
+
+
+      <!-- =================================================
+           CAKE GAME
+      ================================================= -->
+
+      <div
+        class="cake-game hidden"
+        id="cakeGame"
+      >
+
+
+        <!-- LEFT INGREDIENTS -->
+
+        <div class="ingredient-column">
+
+
+          <button
+            class="ingredient-button"
+            data-ingredient="milk"
+            onclick="addIngredient('milk')"
+          >
+
+            <img
+              src="https://i.ibb.co/zWxXQtCn/IMG-0830.png"
+              alt="Milk"
+            >
+
+            <span>
+              Milk
+            </span>
+
+          </button>
+
+
+          <button
+            class="ingredient-button"
+            data-ingredient="oil"
+            onclick="addIngredient('oil')"
+          >
+
+            <img
+              src="https://i.ibb.co/Tx3tgYxV/IMG-0831.png"
+              alt="Vegetable Oil"
+            >
+
+            <span>
+              Vegetable Oil
+            </span>
+
+          </button>
+
+
+          <button
+            class="ingredient-button"
+            data-ingredient="cocoa"
+            onclick="addIngredient('cocoa')"
+          >
+
+            <img
+              src="https://i.ibb.co/7N2MDMY9/IMG-0832.png"
+              alt="Cocoa Powder"
+            >
+
+            <span>
+              Cocoa Powder
+            </span>
+
+          </button>
+
+
+          <button
+            class="ingredient-button"
+            data-ingredient="sugar"
+            onclick="addIngredient('sugar')"
+          >
+
+            <img
+              src="https://i.ibb.co/kVn07bpW/IMG-0833.png"
+              alt="Sugar"
+            >
+
+            <span>
+              Sugar
+            </span>
+
+          </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CSS BOWL
+        ================================================= -->
+
+        <div class="bowl-area">
+
+          <div class="bowl-wrapper">
+
+            <div
+              class="bowl-interior"
+              id="bowlContents"
+            >
+
+              <div
+                class="bowl-layer flour-layer"
+                id="flourLayer"
+              ></div>
+
+              <div
+                class="bowl-layer milk-layer"
+                id="milkLayer"
+              ></div>
+
+              <div
+                class="bowl-layer oil-layer"
+                id="oilLayer"
+              ></div>
+
+              <div
+                class="bowl-layer cocoa-layer"
+                id="cocoaLayer"
+              ></div>
+
+              <div
+                class="bowl-layer sugar-layer"
+                id="sugarLayer"
+              ></div>
+
+              <div
+                class="bowl-layer chocolate-layer"
+                id="chocolateLayer"
+              ></div>
+
+              <div
+                class="bowl-layer butter-layer"
+                id="butterLayer"
+              ></div>
+
+              <div
+                class="bowl-layer egg-layer"
+                id="eggLayer"
+              ></div>
+
+              <div
+                class="bowl-layer baking-layer"
+                id="bakingLayer"
+              ></div>
+
+            </div>
+
+
+            <!-- CSS-DRAWN BOWL -->
+
+            <div
+              class="css-bowl"
+              id="mixingBowl"
+            >
+
+              <div class="bowl-rim"></div>
+
+              <div class="bowl-body">
+
+                <div class="bowl-shine"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <p
+            class="cake-instruction"
+            id="cakeInstruction"
+          >
+            Tap the ingredients in the correct order.
+          </p>
+
+
+          <button
+            class="primary-button hidden"
+            id="mixButton"
+            onclick="mixCake()"
+          >
+            🥄 Mix the batter
+          </button>
+
+
+          <button
+            class="primary-button hidden"
+            id="ovenButton"
+            onclick="bakeCake()"
+          >
+            🔥 Put it in the oven
+          </button>
+
+        </div>
+
+
+
+        <!-- RIGHT INGREDIENTS -->
+
+        <div class="ingredient-column">
+
+
+          <button
+            class="ingredient-button"
+            data-ingredient="chocolate"
+            onclick="addIngredient('chocolate')"
+          >
+
+            <img
+              src="https://i.ibb.co/xSVbDnWR/IMG-0834.png"
+              alt="Chocolate"
+            >
+
+            <span>
+              Chocolate
+            </span>
+
+          </button>
+
+
+          <button
+            class="ingredient-button"
+            data-ingredient="butter"
+            onclick="addIngredient('butter')"
+          >
+
+            <img
+              src="https://i.ibb.co/39qnpxRh/IMG-0837.png"
+              alt="Butter"
+            >
+
+            <span>
+              Butter
+            </span>
+
+          </button>
+
+
+          <button
+            class="ingredient-button"
+            data-ingredient="eggs"
+            onclick="addIngredient('eggs')"
+          >
+
+            <img
+              src="https://i.ibb.co/MxB3trpS/IMG-0838.png"
+              alt="Eggs"
+            >
+
+            <span>
+              Eggs
+            </span>
+
+          </button>
+
+
+          <button
+            class="ingredient-button"
+            data-ingredient="baking"
+            onclick="addIngredient('baking')"
+          >
+
+            <img
+              src="https://i.ibb.co/JWPnh35k/IMG-0841.png"
+              alt="Baking Powder"
+            >
+
+            <span>
+              Baking Powder
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           FINISHED CAKE
+      ================================================= -->
+
+      <div
+        class="cake-finished hidden"
+        id="cakeFinished"
+      >
+
+        <div class="cake-confetti">
+          ✦ ❀ ✦ ❀ ✦
+        </div>
+
+        <img
+          src="https://i.ibb.co/mF9f0fpB/IMG-0853.png"
+          alt="Finished Choco Truffle Cake"
+        >
+
+        <h3>
+          Congratulations!
+        </h3>
+
+        <p>
+          You've made your cake.
+        </p>
+
+        <p>
+          Too bad you can't taste it.
+          You'll have to get the real one
+          from Alvina in person.
+        </p>
+
+        <p class="screenshot-instruction">
+          Take a screenshot before you continue!
+        </p>
+
+        <button
+          class="primary-button"
+          onclick="openCakeCoupon()"
+        >
+          Get Your Cake Coupon ✦
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 5 — CAKE COUPON
+===================================================== -->
+
+<section class="page" id="cakeCouponPage">
+
+  <button
+    class="back-button"
+    onclick="goToPage('kitchenPage')"
+  >
+    ← Back
+  </button>
+
+
+  <div class="coupon-page">
+
+    <div class="coupon">
+
+      <p class="coupon-small">
+        ALVINA'S BAKERY
+      </p>
+
+      <div class="coupon-icon">
+        🍰
+      </div>
+
+      <h1>
+        CAKE COUPON
+      </h1>
+
+      <div class="coupon-line"></div>
+
+      <p>
+        This coupon entitles the bearer to
+      </p>
+
+      <h2>
+        ONE CHOCO TRUFFLE CAKE
+      </h2>
+
+      <p>
+        Redeem from Alvina in person.
+      </p>
+
+      <div class="coupon-warning">
+        SCREENSHOT THIS PAGE AND KEEP IT SAFE.
+      </div>
+
+      <div class="coupon-stamp">
+        VALID
+      </div>
+
+    </div>
+
+    <button
+      class="primary-button coupon-return"
+      onclick="goToPage('villagePage')"
+    >
+      Back to the Magic Village
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 6 — BOOKSTORE
+===================================================== -->
+
+<section class="page" id="libraryPage">
+
+  <button
+    class="back-button"
+    onclick="goToPage('villagePage')"
+  >
+    ← Back to the village
+  </button>
+
+
+  <div
+    class="library-scene"
+    style="background-image:url('https://i.ibb.co/M5ng2czK/IMG-0854.jpg');"
+  >
+
+    <div class="library-overlay">
+
+      <div class="room-heading light-heading">
+
+        <p class="small-header">
+          THE BOOKSTORE
+        </p>
+
+        <h2>
+          A Little Something Hidden
+        </h2>
+
+        <p>
+          Four books. One little secret.
+        </p>
+
+      </div>
+
+
+      <div class="book-selection">
+
+        <button
+          class="mystery-book book-one"
+          onclick="checkBook(1)"
+        >
+          <span>
+            BOOK I
+          </span>
+        </button>
+
+
+        <button
+          class="mystery-book book-two"
+          onclick="checkBook(2)"
+        >
+          <span>
+            BOOK II
+          </span>
+        </button>
+
+
+        <button
+          class="mystery-book book-three"
+          onclick="checkBook(3)"
+        >
+          <span>
+            BOOK III
+          </span>
+        </button>
+
+
+        <button
+          class="mystery-book book-four"
+          onclick="checkBook(4)"
+        >
+          <span>
+            BOOK IV
+          </span>
+        </button>
+
+      </div>
+
+
+      <p
+        class="book-feedback"
+        id="bookFeedback"
+      >
+        One of these books is hiding something for you.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 7 — LETTER
+===================================================== -->
+
+<section class="page" id="letterPage">
+
+  <button
+    class="back-button"
+    onclick="goToPage('libraryPage')"
+  >
+    ← Back to the bookstore
+  </button>
+
+
+  <div class="letter-container">
+
+    <div class="fallen-letter">
+
+      <div class="letter-decoration">
+        ✦ ❀ ✦
+      </div>
+
+      <p class="small-header letter-heading">
+        A LETTER FOR ALBAB
+      </p>
+
+
+      <article class="letter-sheet">
+
+        <h2>
+          My dearest Ullu,
+        </h2>
+
+        <p>
+          So, the day has finally come. You're officially 17!!!
+          Happy Birthday (enjoy the 4 months of being older than me😔💔).
+          (That was so unfunny).
+        </p>
+
+        <p>
+          Anyways, I just wanted to say, I mean, well there's a lot
+          I wanted to say to be honest. Let me just begin with,
+          I love you so much.
+        </p>
+
+        <p>
+          I love you because you're one of the kindest, sweetest,
+          most thoughtful, most selfless, most understanding,
+          most patient, and most winful person with the cutest smile,
+          prettiest voice, biggest heart, purest soul, and the best
+          taste (in friends ofc😛) that I've ever known.
+        </p>
+
+        <p>
+          You are LITERALLY sunshine personified. No matter how many
+          times I say it, it's not enough. It's like the way people
+          describe coffee to bring so much energy to you, you are
+          probably my caffeine.
+        </p>
+
+      </article>
+
+
+      <article class="letter-sheet">
+
+        <p>
+          Whenever I'm with you it's like the place lit up as soon
+          as you walked in, and my mood got better by 100x.
+          I'm so grateful that in the limited time I have on Earth,
+          I got to know you. For no matter how long it may be.
+        </p>
+
+        <p>
+          I don't know if it's overstretching it. But you are just,
+          otherworldly.
+        </p>
+
+        <p>
+          Thank you so much, for being one of the best things this
+          mortal world has to offer. I wish that you have the best
+          birthday you've had so far, and I wish you get all that
+          you want this year, and things keep changing for the better
+          from the bottom of my heart. Because you deserve it more
+          than anything in the world.
+        </p>
+
+        <p>
+          Once again, happiest birthday ever!!! Cheers to 17🧑‍🩰
+        </p>
+
+        <p class="letter-signoff">
+          Lots of love,<br>
+          Vinnie ♡
+        </p>
+
+      </article>
+
+    </div>
+
+
+    <button
+      class="primary-button"
+      onclick="goToPage('villagePage')"
+    >
+      Back to the Magic Village
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 8 — THEATRE
+===================================================== -->
+
+<section class="page" id="cafePage">
+
+  <button
+    class="back-button"
+    onclick="goToPage('villagePage')"
+  >
+    ← Back to the village
+  </button>
+
+
+  <div
+    class="cafe-scene theatre-scene"
+    style="background-image:url('https://i.ibb.co/r21P8QYx/IMG-0863.jpg');"
+  >
+
+    <div class="cafe-overlay theatre-overlay">
+
+
+      <!-- INITIAL THEATRE MESSAGE -->
+
+      <div
+        class="cafe-message"
+        id="cafeMessage"
+      >
+
+        <p class="small-header">
+          THE THEATRE
+        </p>
+
+        <h2>
+          Welcome to the Theatre
+        </h2>
+
+        <p>
+          Your seat is waiting.
+        </p>
+
+        <p>
+          Are you ready to watch your movie?
+        </p>
+
+        <button
+          class="binocular-button"
+          onclick="lookCloser()"
+        >
+          🎬 YES, LET'S WATCH
+        </button>
+
+      </div>
+
+
+      <!-- VIDEO CARD -->
+
+      <div
+        class="cafe-video-card hidden"
+        id="cafeVideoCard"
+      >
+
+        <p class="small-header">
+          NOW SHOWING
+        </p>
+
+        <h2>
+          Alvina's favourite
+        </h2>
+
+        <p>
+          Your film is waiting.
+        </p>
+
+        <button
+          class="primary-button"
+          onclick="openVideo()"
+        >
+          ▶ WATCH
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 9 — CINEMA END
+===================================================== -->
+
+<section
+  class="page"
+  id="videoEndingPage"
+>
+
+  <div class="simple-ending">
+
+    <div class="ending-stars">
+      ✦ ✧ ✦
+    </div>
+
+    <p class="small-header">
+      THE ULTIMATE CINEMA
+    </p>
+
+    <h1>
+      The End.
+    </h1>
+
+    <p>
+      Thank you.
+    </p>
+
+    <button
+      class="primary-button"
+      onclick="goToPage('villagePage')"
+    >
+      Back to the Magic Village
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 10 — ANTIQUE SHOP
+===================================================== -->
+
+<section class="page" id="antiquePage">
+
+  <button
+    class="back-button"
+    onclick="goToPage('villagePage')"
+  >
+    ← Back to the village
+  </button>
+
+
+  <div
+    class="antique-scene"
+    style="background-image:url('https://i.ibb.co/84DphstT/IMG-0857.jpg');"
+  >
+
+    <div class="antique-overlay">
+
+
+      <!-- QUESTION -->
+
+      <div
+        class="antique-question"
+        id="antiqueQuestion"
+      >
+
+        <p class="small-header">
+          ALVINA'S ANTIQUES
+        </p>
+
+        <div class="antique-icon">
+          🗝️
+        </div>
+
+        <h2>
+          We're almost done...
+        </h2>
+
+        <p>
+          Just a few gifts remaining.
+        </p>
+
+        <p>
+          Would you like to have them?
+        </p>
+
+        <div class="choice-buttons">
+
+          <button
+            onclick="giftChoice('yes')"
+          >
+            Yes
+          </button>
+
+          <button
+            onclick="giftChoice('no')"
+          >
+            No
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- NOT ALLOWED -->
+
+      <div
+        class="gift-not-allowed hidden"
+        id="giftNotAllowed"
+      >
+
+        <div class="antique-icon">
+          🗝️
+        </div>
+
+        <h2>
+          Not so fast.
+        </h2>
+
+        <p>
+          Some things are better kept in person.
+        </p>
+
+        <p>
+          You'll have to come find out
+          what they are yourself.
+        </p>
+
+        <button
+          class="primary-button"
+          onclick="showFinalCoupon()"
+        >
+          Continue ✦
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 11 — FINAL COUPON
+===================================================== -->
+
+<section
+  class="page"
+  id="finalCouponPage"
+>
+
+  <div class="final-coupon-page">
+
+    <div class="final-coupon">
+
+      <p class="coupon-small">
+        ALVINA'S ANTIQUES
+      </p>
+
+      <div class="coupon-icon">
+        🔐
+      </div>
+
+      <h1>
+        CLASSIFIED
+      </h1>
+
+      <div class="coupon-line"></div>
+
+      <p>
+        Some things are better kept in person.
+      </p>
+
+      <p>
+        This is your final coupon.
+      </p>
+
+      <h2>
+        FINAL GIFT
+      </h2>
+
+      <p>
+        Show this coupon to Alvina when you meet
+        to receive your final gift.
+      </p>
+
+      <div class="coupon-warning">
+        SCREENSHOT THIS PAGE!
+      </div>
+
+      <p class="coupon-note">
+        Remember to keep all three coupons you've
+        collected throughout the week safely in your gallery.
+        Show them to Alvina when you meet to make sure
+        your gift is complete!!!
+      </p>
+
+      <div class="coupon-stamp">
+        CLASSIFIED
+      </div>
+
+    </div>
+
+
+    <button
+      class="primary-button coupon-return"
+      onclick="goToPage('goodbyePage')"
+    >
+      Finish the Adventure ✦
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PAGE 12 — GOODBYE
+===================================================== -->
+
+<section
+  class="page"
+  id="goodbyePage"
+>
+
+  <div class="goodbye-scene">
+
+    <div class="goodbye-stars">
+      ✦ &nbsp; ✧ &nbsp; ✦
+    </div>
+
+    <p class="small-header">
+      THE END 
+    </p>
+
+    <h1>
+      thank you for being here!!
+    </h1>
+
+    <div class="goodbye-message">
+
+      <p>
+        It's been such a lovely  week, and I really,
+        really hope you enjoyed these "gifts" as much as I enjoyed
+        making them for you.
+      </p>
+
+      <p>
+        I'm really going to miss planning these
+        challenges, coming up with ridiculous ideas and
+        finding new ways to surprise you.
+      </p>
+
+      <p>
+        Thank you for making this little adventure
+        worth celebrating. Hope it made you feel
+        as special as you really are.
+      </p>
+
+    </div>
+
+
+    <div class="goodbye-final">
+
+      <h2>
+        Until next time?
+      </h2>
+
+      <p>
+        See you next year :P
+      </p>
+
+    </div>
+
+
+    <div class="goodbye-decoration">
+      ❀ &nbsp; ✦ &nbsp; ❀
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
