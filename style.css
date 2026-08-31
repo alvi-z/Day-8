@@ -1,0 +1,2975 @@
+/* =========================================================
+   GRAND FINALE — ROYAL WHIMSICAL STORYBOOK
+========================================================= */
+
+:root {
+  --cream: #fff8e9;
+  --paper: #fffdf5;
+  --parchment: #f4dfaa;
+  --parchment-light: #fff0c5;
+
+  --ink: #4a352d;
+  --brown: #805c48;
+  --dark: #3e2b25;
+
+  --forest: #315c45;
+  --forest-dark: #234533;
+  --forest-light: #52775c;
+
+  --pink: #e9a6a8;
+  --soft-pink: #f6d6d0;
+
+  --blue: #a9cbd3;
+  --soft-blue: #dcecef;
+
+  --yellow: #f3cf7a;
+  --soft-yellow: #f9e8b4;
+
+  --green: #a8b994;
+  --red: #a85f59;
+
+  --shadow: rgba(62, 43, 37, 0.25);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+.page {
+  display: none;
+
+  width: 100%;
+  min-height: 100svh;
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page.active {
+  display: block;
+
+  animation:
+    pageIn 0.55s ease;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+.small-header {
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  color: var(--brown);
+
+  margin: 0 0 10px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--dark);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.choice-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+}
+
+.choice-buttons button,
+.primary-button {
+  border: 2px solid var(--dark);
+
+  background: var(--paper);
+
+  color: var(--dark);
+
+  padding: 12px 23px;
+
+  border-radius: 30px;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 0 var(--dark);
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.choice-buttons button:hover,
+.primary-button:hover {
+  background: var(--soft-yellow);
+
+  transform:
+    translateY(-3px);
+}
+
+.choice-buttons button:active,
+.primary-button:active {
+  transform:
+    translateY(3px);
+
+  box-shadow:
+    0 1px 0 var(--dark);
+}
+
+
+/* =========================================================
+   PAGE 1 — WELCOME
+========================================================= */
+
+#welcomePage {
+  display: none;
+
+  min-height: 100svh;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 35px 22px;
+
+  color: #fff8e9;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #52775c 0%,
+      #315c45 45%,
+      #1f4030 100%
+    );
+}
+
+#welcomePage.active {
+  display: flex;
+}
+
+#welcomePage::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 14px;
+
+  border:
+    2px dashed
+    rgba(255, 239, 194, 0.55);
+
+  border-radius: 28px;
+
+  pointer-events: none;
+}
+
+#welcomePage::after {
+  content:
+    "✦  ❀  ✦  ❀  ✦";
+
+  position: absolute;
+
+  bottom: 25px;
+
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  color: var(--yellow);
+
+  font-size: 18px;
+
+  letter-spacing: 7px;
+}
+
+.welcome-content {
+  max-width: 570px;
+
+  text-align: center;
+
+  position: relative;
+
+  z-index: 3;
+}
+
+#welcomePage .small-header {
+  color: #f9e5a9;
+}
+
+.welcome-content h1 {
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(48px, 14vw, 82px);
+
+  line-height: 0.95;
+
+  margin: 12px 0 15px;
+
+  color: #fff8e9;
+
+  text-shadow:
+    3px 4px 0
+    rgba(0, 0, 0, 0.18);
+}
+
+.welcome-divider {
+  color: var(--yellow);
+
+  font-size: 27px;
+
+  margin: 15px 0;
+}
+
+.welcome-message {
+  max-width: 510px;
+
+  margin: 0 auto 12px;
+
+  font-size: 19px;
+
+  line-height: 1.55;
+
+  color: #fff8e9;
+}
+
+.welcome-message.smaller {
+  font-size: 16px;
+
+  font-style: italic;
+
+  color: #f8e8bc;
+}
+
+.question {
+  margin:
+    30px 0 15px;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  color: #fff8e9;
+}
+
+
+/* =========================================================
+   PAGE 1 BUTTON FIX
+========================================================= */
+
+#welcomePage .choice-buttons button {
+  min-width: 100px;
+
+  background: #fff8e9;
+
+  color: var(--forest-dark);
+
+  border-color: #fff8e9;
+
+  box-shadow:
+    0 5px 0
+    #172d21;
+}
+
+#welcomePage .choice-buttons button:hover {
+  background: var(--soft-yellow);
+
+  color: var(--dark);
+}
+
+#welcomePage .welcome-no {
+  background: #f6d6d0;
+
+  color: var(--dark);
+
+  border-color: #f6d6d0;
+
+  box-shadow:
+    0 5px 0
+    #172d21;
+}
+
+
+/* =========================================================
+   PAGE 1 DECOR
+========================================================= */
+
+.decor {
+  position: absolute;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.cloud {
+  color: #e7f1e8;
+
+  opacity: 0.65;
+
+  font-size: 45px;
+
+  animation:
+    cloudFloat 6s ease-in-out infinite;
+}
+
+.cloud-one {
+  top: 8%;
+  left: 4%;
+}
+
+.cloud-two {
+  top: 17%;
+  right: 4%;
+
+  animation-delay: 1.5s;
+}
+
+.star {
+  color: var(--yellow);
+
+  font-size: 23px;
+
+  animation:
+    twinkle 2.5s ease-in-out infinite;
+}
+
+.star-one {
+  top: 13%;
+  right: 25%;
+}
+
+.star-two {
+  top: 28%;
+  left: 10%;
+
+  animation-delay: 0.8s;
+}
+
+.star-three {
+  top: 65%;
+  right: 12%;
+
+  animation-delay: 1.4s;
+}
+
+.flower {
+  color: #f2c7a8;
+
+  font-size: 27px;
+
+  animation:
+    flowerFloat 4s ease-in-out infinite;
+}
+
+.flower-one {
+  bottom: 12%;
+  left: 6%;
+}
+
+.flower-two {
+  bottom: 18%;
+  right: 7%;
+
+  animation-delay: 1s;
+}
+
+@keyframes cloudFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes flowerFloat {
+  0%,
+  100% {
+    transform:
+      rotate(-5deg)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      rotate(5deg)
+      translateY(-5px);
+  }
+}
+
+
+/* =========================================================
+   PAGE 2 — ROYAL PARCHMENT
+========================================================= */
+
+#introPage {
+  min-height: 100svh;
+
+  padding:
+    55px 18px;
+
+  display: none;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      #52775c,
+      #315c45 55%,
+      #234533 100%
+    );
+}
+
+#introPage.active {
+  display: flex;
+}
+
+.parchment-wrapper {
+  width: 100%;
+
+  max-width: 720px;
+
+  position: relative;
+
+  padding:
+    25px 0;
+}
+
+.parchment {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    50px 45px 45px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #dfc58c 0%,
+      #fff0c5 7%,
+      #f4dfaa 50%,
+      #fff0c5 93%,
+      #dfc58c 100%
+    );
+
+  border:
+    1px solid #9b7646;
+
+  box-shadow:
+    0 14px 25px
+    rgba(0,0,0,0.25);
+
+  color: #543827;
+}
+
+.parchment::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 12px;
+
+  border:
+    1px solid
+    rgba(105, 69, 39, 0.38);
+
+  pointer-events: none;
+}
+
+.parchment::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 20px;
+
+  border:
+    1px dashed
+    rgba(105, 69, 39, 0.20);
+
+  pointer-events: none;
+}
+
+.parchment-roll {
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 38px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      #d3b573,
+      #f7e6b5,
+      #caa866
+    );
+
+  border:
+    1px solid #997544;
+
+  box-shadow:
+    0 5px 8px
+    rgba(0,0,0,0.18);
+
+  z-index: 3;
+}
+
+.parchment-roll-top {
+  top: 6px;
+}
+
+.parchment-roll-bottom {
+  bottom: 6px;
+}
+
+.parchment-decoration {
+  position: relative;
+
+  z-index: 5;
+
+  text-align: center;
+
+  color: #9c693d;
+
+  font-size: 24px;
+
+  margin-bottom: 10px;
+}
+
+.parchment .small-header {
+  position: relative;
+
+  z-index: 5;
+
+  text-align: center;
+
+  color: #7a4f31;
+}
+
+.parchment h2 {
+  position: relative;
+
+  z-index: 5;
+
+  font-family:
+    "Playfair Display",
+    serif;
+
+  text-align: center;
+
+  font-size: 40px;
+
+  color: #513424;
+
+  margin:
+    12px 0 28px;
+}
+
+.royal-letter {
+  position: relative;
+
+  z-index: 5;
+
+  font-size: 19px;
+
+  line-height: 1.65;
+
+  color: #573a28;
+
+  text-align: left;
+}
+
+.royal-letter p {
+  margin:
+    0 0 19px;
+}
+
+.royal-emphasis {
+  font-weight: 700;
+
+  color: #75452e;
+
+  text-align: center;
+}
+
+.parchment-buttons {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 25px;
+}
+
+.parchment-buttons button {
+  background: #315c45;
+
+  color: #fff5dc;
+
+  border-color: #234533;
+
+  box-shadow:
+    0 4px 0 #172d21;
+}
+
+.parchment-buttons button:hover {
+  background: #52775c;
+
+  color: #fff;
+}
+
+.parchment-decoration.bottom {
+  position: relative;
+
+  z-index: 5;
+
+  margin:
+    25px 0 0;
+}
+
+
+/* =========================================================
+   PAGE 3 — MAGIC VILLAGE
+========================================================= */
+
+#villagePage {
+  background:
+    linear-gradient(
+      180deg,
+      #a9ced0 0%,
+      #dcecef 40%,
+      #e8d6ac 68%,
+      #7f9e69 100%
+    );
+}
+
+.village-sky {
+  min-height: 100svh;
+
+  padding:
+    50px 18px 40px;
+
+  position: relative;
+}
+
+.village-sky::before {
+  content: "";
+
+  position: absolute;
+
+  left: -10%;
+  right: -10%;
+
+  bottom: -70px;
+
+  height: 250px;
+
+  border-radius:
+    50% 50% 0 0;
+
+  background:
+    #789664;
+}
+
+.village-sky::after {
+  content:
+    "✿     ❀       ✿     ❀       ✿";
+
+  position: absolute;
+
+  bottom: 25px;
+
+  left: 0;
+  right: 0;
+
+  text-align: center;
+
+  color: #f9efd2;
+
+  font-size: 20px;
+
+  letter-spacing: 9px;
+}
+
+.village-cloud {
+  position: absolute;
+
+  color: white;
+
+  opacity: 0.55;
+
+  font-size: 55px;
+
+  z-index: 1;
+
+  animation:
+    cloudFloat 7s ease-in-out infinite;
+}
+
+.cloud-left {
+  left: 3%;
+  top: 15%;
+}
+
+.cloud-right {
+  right: 4%;
+  top: 27%;
+
+  animation-delay: 2s;
+}
+
+.village-title {
+  position: relative;
+
+  z-index: 5;
+
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.village-title h2 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(38px, 10vw, 62px);
+
+  margin:
+    0 0 5px;
+
+  color: var(--dark);
+
+  text-shadow:
+    2px 2px 0
+    rgba(255,255,255,0.55);
+}
+
+.village-title p:last-child {
+  font-size: 18px;
+
+  margin: 8px 0;
+}
+
+.village {
+  position: relative;
+
+  z-index: 6;
+
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(130px, 1fr));
+
+  gap:
+    25px 20px;
+
+  align-items: end;
+}
+
+.village-building {
+  position: relative;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  border-radius: 15px;
+
+  transition:
+    transform 0.3s ease;
+
+  animation:
+    villageBuildingIn
+    0.8s ease both;
+}
+
+.village-building:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.village-building:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.village-building:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.village-building:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+@keyframes villageBuildingIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px)
+      scale(0.93);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.village-building img {
+  width: 100%;
+
+  border-radius: 12px;
+
+  filter:
+    drop-shadow(
+      0 8px 7px
+      rgba(74,53,45,0.28)
+    );
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.village-building:hover img,
+.village-building:active img {
+  transform:
+    translateY(-7px)
+    scale(1.02);
+
+  filter:
+    drop-shadow(
+      0 15px 13px
+      rgba(74,53,45,0.32)
+    );
+}
+
+.building-label {
+  display: inline-block;
+
+  margin-top: 8px;
+
+  padding:
+    6px 12px;
+
+  background:
+    var(--paper);
+
+  border:
+    1.5px solid var(--dark);
+
+  border-radius: 20px;
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  box-shadow:
+    0 3px 0
+    rgba(74,53,45,0.18);
+}
+
+.village-hint {
+  position: relative;
+
+  z-index: 8;
+
+  text-align: center;
+
+  margin:
+    32px 0 0;
+
+  font-size: 18px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-button {
+  position: fixed;
+
+  top: 15px;
+  left: 15px;
+
+  z-index: 100;
+
+  padding:
+    9px 15px;
+
+  border:
+    1.5px solid var(--dark);
+
+  border-radius: 25px;
+
+  background:
+    rgba(255,253,245,0.94);
+
+  color: var(--dark);
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 0
+    rgba(74,53,45,0.16);
+}
+
+.back-button:hover {
+  background:
+    var(--soft-yellow);
+}
+
+
+/* =========================================================
+   KITCHEN / BAKERY
+========================================================= */
+
+#kitchenPage {
+  background:
+    var(--cream);
+}
+
+.kitchen-scene {
+  min-height: 100svh;
+
+  padding:
+    75px 15px 50px;
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+.kitchen-scene::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(255,248,233,0.20);
+
+  pointer-events: none;
+}
+
+.kitchen-overlay {
+  position: relative;
+
+  z-index: 2;
+
+  min-height:
+    calc(100svh - 125px);
+}
+
+.room-heading {
+  text-align: center;
+
+  margin-bottom: 20px;
+}
+
+.room-heading h2 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(38px, 10vw, 62px);
+
+  line-height: 1;
+
+  margin: 0;
+
+  text-shadow:
+    1px 2px 0
+    rgba(255,255,255,0.7);
+}
+
+.room-heading p {
+  font-size: 19px;
+
+  margin: 8px 0;
+}
+
+
+/* =========================================================
+   KITCHEN INSTRUCTIONS
+========================================================= */
+
+.instruction-card {
+  max-width: 520px;
+
+  margin:
+    0 auto 25px;
+
+  padding:
+    25px;
+
+  background:
+    rgba(255,253,245,0.97);
+
+  border:
+    2px solid var(--dark);
+
+  border-radius: 17px;
+
+  text-align: center;
+
+  box-shadow:
+    7px 8px 0
+    rgba(74,53,45,0.18);
+}
+
+.mini-cake-icon {
+  font-size: 40px;
+
+  animation:
+    cakeBounce 2s ease-in-out infinite;
+}
+
+@keyframes cakeBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.instruction-card h3 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 29px;
+
+  margin:
+    5px 0 8px;
+}
+
+.instruction-card p {
+  font-size: 18px;
+
+  line-height: 1.45;
+}
+
+.tiny-note {
+  font-size: 14px !important;
+
+  font-style: italic;
+
+  color: var(--brown);
+}
+
+
+/* =========================================================
+   CAKE GAME
+========================================================= */
+
+.cake-game {
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1.5fr 1fr;
+
+  gap: 15px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   INGREDIENT BUTTONS
+========================================================= */
+
+.ingredient-column {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 10px;
+}
+
+.ingredient-button {
+  min-height: 105px;
+
+  padding: 8px;
+
+  border:
+    1.5px solid var(--dark);
+
+  border-radius: 13px;
+
+  background:
+    rgba(255,253,245,0.94);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 0
+    rgba(74,53,45,0.18);
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    background 0.2s ease;
+}
+
+.ingredient-button:hover {
+  transform:
+    translateY(-4px);
+
+  background:
+    #fffaf0;
+}
+
+.ingredient-button:active {
+  transform:
+    scale(0.95);
+}
+
+.ingredient-button.used {
+  opacity: 0.35;
+
+  pointer-events: none;
+
+  filter:
+    grayscale(0.4);
+}
+
+.ingredient-button img {
+  height: 58px;
+
+  width: 100%;
+
+  object-fit: contain;
+
+  margin:
+    0 auto 5px;
+}
+
+.ingredient-button span {
+  display: block;
+
+  font-size: 12px;
+
+  line-height: 1.1;
+}
+
+
+/* =========================================================
+   CSS BOWL
+========================================================= */
+
+.bowl-area {
+  text-align: center;
+
+  min-width: 0;
+}
+
+.bowl-wrapper {
+  position: relative;
+
+  width:
+    min(320px, 100%);
+
+  aspect-ratio:
+    1 / 1;
+
+  margin:
+    0 auto;
+}
+
+
+/* =========================================================
+   BOWL INTERIOR
+========================================================= */
+
+.bowl-interior {
+  position: absolute;
+
+  width: 66%;
+
+  height: 48%;
+
+  left: 17%;
+
+  top: 31%;
+
+  border-radius:
+    0 0 50% 50% / 0 0 60% 60%;
+
+  overflow: hidden;
+
+  z-index: 2;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255,255,255,0.12),
+      rgba(255,255,255,0)
+    );
+}
+
+
+/* =========================================================
+   COLOURED INGREDIENT LAYERS
+========================================================= */
+
+.bowl-layer {
+  position: absolute;
+
+  inset: -10%;
+
+  opacity: 0;
+
+  transform:
+    scale(0.15)
+    rotate(-8deg);
+
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s
+    cubic-bezier(.2,.8,.3,1);
+
+  border-radius: 50%;
+}
+
+.bowl-layer.visible {
+  opacity: 1;
+
+  transform:
+    scale(1)
+    rotate(0deg);
+}
+
+
+/* MILK */
+
+.milk-layer {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #fffefa 0%,
+      #f7f7ed 50%,
+      #e8e5d6 75%,
+      transparent 76%
+    );
+}
+
+
+/* OIL */
+
+.oil-layer {
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(255,224,91,0.90) 0%,
+      rgba(242,193,43,0.72) 45%,
+      rgba(214,159,24,0.35) 65%,
+      transparent 72%
+    );
+}
+
+
+/* COCOA */
+
+.cocoa-layer {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #75482f 0%,
+      #603820 50%,
+      #482a1c 70%,
+      transparent 73%
+    );
+}
+
+
+/* SUGAR */
+
+.sugar-layer {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #fffdf4 0%,
+      #fff5d7 50%,
+      #eee2c0 70%,
+      transparent 73%
+    );
+}
+
+
+/* CHOCOLATE */
+
+.chocolate-layer {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #633426 0%,
+      #4b261c 50%,
+      #32170f 70%,
+      transparent 73%
+    );
+}
+
+
+/* BUTTER */
+
+.butter-layer {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #ffe987 0%,
+      #f5cf4d 50%,
+      #e3b72e 68%,
+      transparent 73%
+    );
+}
+
+
+/* EGGS — ORANGE/YELLOW */
+
+.egg-layer {
+  background:
+    radial-gradient(
+      circle at center,
+      #ff8c1a 0%,
+      #ff9f21 25%,
+      #ffb72f 45%,
+      rgba(255,210,75,0.65) 65%,
+      transparent 70%
+    );
+}
+
+
+/* BAKING POWDER */
+
+.baking-layer {
+  background:
+    radial-gradient(
+      ellipse at center,
+      #fffdf1 0%,
+      #f5eedb 48%,
+      #ddd4bd 68%,
+      transparent 73%
+    );
+}
+
+
+/* =========================================================
+   CSS-DRAWN BOWL
+========================================================= */
+
+.css-bowl {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  z-index: 4;
+
+  pointer-events: none;
+
+  filter:
+    drop-shadow(
+      0 9px 7px
+      rgba(74,53,45,0.22)
+    );
+
+  transform-origin:
+    center center;
+}
+
+
+/* Bowl rim */
+
+.bowl-rim {
+  position: absolute;
+
+  width: 76%;
+
+  height: 27%;
+
+  left: 12%;
+
+  top: 23%;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fdfdf9 0%,
+      #e9e7dd 45%,
+      #cbc8bc 100%
+    );
+
+  border:
+    4px solid #aaa79d;
+
+  box-shadow:
+    inset 0 5px 8px
+    rgba(0,0,0,0.12);
+
+  z-index: 3;
+}
+
+
+/* Inner opening */
+
+.bowl-rim::after {
+  content: "";
+
+  position: absolute;
+
+  width: 82%;
+
+  height: 66%;
+
+  left: 9%;
+
+  top: 17%;
+
+  border-radius: 50%;
+
+  background:
+    #d5d1c5;
+
+  box-shadow:
+    inset 0 5px 8px
+    rgba(0,0,0,0.14);
+}
+
+
+/* Bowl body */
+
+.bowl-body {
+  position: absolute;
+
+  width: 70%;
+
+  height: 52%;
+
+  left: 15%;
+
+  top: 30%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fdfdf8 0%,
+      #e8e6dc 38%,
+      #c9c6ba 75%,
+      #a9a69c 100%
+    );
+
+  border:
+    3px solid #aaa79d;
+
+  border-top:
+    none;
+
+  border-radius:
+    10% 10% 45% 45% / 10% 10% 65% 65%;
+
+  box-shadow:
+    inset 8px -4px 12px
+    rgba(0,0,0,0.10);
+
+  z-index: 1;
+}
+
+
+/* Highlight */
+
+.bowl-shine {
+  position: absolute;
+
+  width: 17%;
+
+  height: 45%;
+
+  left: 17%;
+
+  top: 18%;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.62);
+
+  transform:
+    rotate(12deg);
+
+  filter:
+    blur(1px);
+}
+
+
+/* =========================================================
+   BOWL MIXING ANIMATION
+========================================================= */
+
+.bowl-area.mixing .css-bowl {
+  animation:
+    bowlShake
+    0.22s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes bowlShake {
+  from {
+    transform:
+      rotate(-3deg)
+      translateX(-3px);
+  }
+
+  to {
+    transform:
+      rotate(3deg)
+      translateX(3px);
+  }
+}
+
+
+/* =========================================================
+   CAKE INSTRUCTIONS
+========================================================= */
+
+.cake-instruction {
+  margin:
+    8px auto 12px;
+
+  max-width: 360px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  min-height: 28px;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   FINISHED CAKE
+========================================================= */
+
+.cake-finished {
+  max-width: 600px;
+
+  margin:
+    25px auto;
+
+  padding: 25px;
+
+  background:
+    rgba(255,253,245,0.98);
+
+  border:
+    2px solid var(--dark);
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    8px 9px 0
+    rgba(74,53,45,0.18);
+}
+
+.cake-confetti {
+  color: var(--yellow);
+
+  font-size: 22px;
+
+  letter-spacing: 5px;
+
+  margin-bottom: 10px;
+}
+
+.cake-finished img {
+  width:
+    min(300px, 80%);
+
+  margin:
+    0 auto 15px;
+
+  animation:
+    cakeAppear
+    0.8s
+    ease;
+}
+
+@keyframes cakeAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(20px)
+      scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+.cake-finished h3 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 35px;
+
+  margin:
+    5px 0;
+}
+
+.cake-finished p {
+  font-size: 19px;
+
+  line-height: 1.45;
+}
+
+.screenshot-instruction {
+  font-weight: 700;
+
+  color:
+    var(--red);
+}
+
+
+/* =========================================================
+   COUPONS
+========================================================= */
+
+#cakeCouponPage,
+#finalCouponPage {
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    40px 20px;
+
+  background:
+    radial-gradient(
+      circle,
+      #fffdf3,
+      #f5ddcf
+    );
+}
+
+#cakeCouponPage.active,
+#finalCouponPage.active {
+  display: flex;
+}
+
+.coupon-page,
+.final-coupon-page {
+  width: 100%;
+
+  max-width: 650px;
+
+  text-align: center;
+}
+
+.coupon,
+.final-coupon {
+  position: relative;
+
+  padding:
+    40px 25px;
+
+  background:
+    #fff8e4;
+
+  border:
+    3px dashed var(--dark);
+
+  box-shadow:
+    10px 11px 0
+    rgba(74,53,45,0.18);
+}
+
+.coupon::before,
+.coupon::after,
+.final-coupon::before,
+.final-coupon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 32px;
+
+  height: 32px;
+
+  border-radius: 50%;
+
+  background:
+    var(--cream);
+
+  top: 50%;
+}
+
+.coupon::before,
+.final-coupon::before {
+  left: -17px;
+}
+
+.coupon::after,
+.final-coupon::after {
+  right: -17px;
+}
+
+.coupon-small {
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+}
+
+.coupon-icon {
+  font-size: 35px;
+
+  margin:
+    5px 0;
+}
+
+.coupon h1,
+.final-coupon h1 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 45px;
+
+  margin:
+    8px 0;
+}
+
+.coupon h2,
+.final-coupon h2 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 27px;
+}
+
+.coupon-line {
+  width: 75%;
+
+  height: 1px;
+
+  background:
+    var(--dark);
+
+  margin:
+    18px auto;
+}
+
+.coupon p,
+.final-coupon p {
+  font-size: 18px;
+}
+
+.coupon-warning {
+  margin:
+    22px 0;
+
+  padding: 10px;
+
+  border:
+    1px solid var(--red);
+
+  color:
+    var(--red);
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.coupon-stamp {
+  width: 70px;
+
+  height: 70px;
+
+  margin:
+    20px auto 0;
+
+  border:
+    2px solid var(--red);
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color:
+    var(--red);
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 9px;
+
+  transform:
+    rotate(-10deg);
+}
+
+.coupon-note {
+  font-size:
+    15px !important;
+
+  line-height:
+    1.45;
+}
+
+.coupon-return {
+  margin-top:
+    25px;
+}
+
+
+/* =========================================================
+   BOOKSTORE
+========================================================= */
+
+#libraryPage {
+  background:
+    #30251f;
+}
+
+.library-scene {
+  min-height: 100svh;
+
+  width: 100%;
+
+  background-size:
+    cover;
+
+  background-position:
+    center center;
+
+  background-repeat:
+    no-repeat;
+
+  position: relative;
+}
+
+.library-overlay {
+  min-height: 100svh;
+
+  padding:
+    85px 18px 40px;
+
+  background:
+    linear-gradient(
+      rgba(40,27,20,0.28),
+      rgba(40,27,20,0.08)
+    );
+}
+
+.light-heading {
+  color:
+    #fff8e8;
+
+  text-shadow:
+    0 2px 5px
+    rgba(0,0,0,0.4);
+}
+
+.light-heading h2 {
+  color:
+    #fff8e8;
+}
+
+.light-heading .small-header {
+  color:
+    #f6dd9f;
+}
+
+.book-selection {
+  max-width: 650px;
+
+  margin:
+    35px auto 20px;
+
+  display: flex;
+
+  align-items: end;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.mystery-book {
+  position: relative;
+
+  width: 21%;
+
+  min-height: 180px;
+
+  border:
+    3px solid #3f2c25;
+
+  border-radius:
+    4px 9px 9px 4px;
+
+  cursor: pointer;
+
+  color:
+    #fff5dc;
+
+  box-shadow:
+    6px 8px 0
+    rgba(0,0,0,0.22);
+
+  transition:
+    transform 0.25s ease;
+}
+
+.mystery-book:hover {
+  transform:
+    translateY(-10px)
+    rotate(-1deg);
+}
+
+.mystery-book span {
+  writing-mode:
+    vertical-rl;
+
+  transform:
+    rotate(180deg);
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.book-one {
+  height: 195px;
+
+  background:
+    #8b5751;
+}
+
+.book-two {
+  height: 165px;
+
+  background:
+    #667b86;
+}
+
+.book-three {
+  height: 210px;
+
+  background:
+    #c49b56;
+}
+
+.book-four {
+  height: 180px;
+
+  background:
+    #6c7b5e;
+}
+
+.book-feedback {
+  max-width: 420px;
+
+  margin:
+    20px auto;
+
+  padding:
+    12px 18px;
+
+  background:
+    rgba(255,250,234,0.94);
+
+  border:
+    1.5px solid var(--dark);
+
+  border-radius:
+    25px;
+
+  text-align:
+    center;
+
+  font-size:
+    18px;
+}
+
+
+/* =========================================================
+   FALLING LETTER
+========================================================= */
+
+.falling-letter-button {
+  position: fixed;
+
+  z-index: 9999;
+
+  width: 70px;
+
+  height: 82px;
+
+  border:
+    2px solid var(--dark);
+
+  border-radius: 7px;
+
+  background:
+    #fff8e7;
+
+  color:
+    var(--dark);
+
+  cursor: pointer;
+
+  box-shadow:
+    4px 6px 0
+    rgba(74,53,45,0.2);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.falling-letter-button span {
+  font-size: 30px;
+}
+
+.falling-letter-button small {
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+
+  margin-top: 3px;
+}
+
+.falling-letter-button.letter-ready {
+  animation:
+    letterPulse
+    1.5s
+    ease-in-out
+    infinite;
+}
+
+@keyframes letterPulse {
+  0%,
+  100% {
+    transform:
+      rotate(-2deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      rotate(2deg)
+      scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   LETTER PAGE
+========================================================= */
+
+#letterPage {
+  background:
+    #c7b28e;
+}
+
+.letter-container {
+  min-height: 100svh;
+
+  padding:
+    75px 15px 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.fallen-letter {
+  width: 100%;
+
+  max-width: 850px;
+
+  background:
+    #fff8e7;
+
+  border:
+    2px solid var(--dark);
+
+  box-shadow:
+    12px 15px 0
+    rgba(74,53,45,0.18);
+}
+
+.letter-decoration {
+  text-align: center;
+
+  color:
+    var(--pink);
+
+  font-size: 25px;
+
+  padding-top: 20px;
+}
+
+.letter-heading {
+  text-align: center;
+}
+
+.letter-sheet {
+  padding:
+    25px 35px 35px;
+
+  font-size: 18px;
+
+  line-height: 1.65;
+}
+
+.letter-sheet + .letter-sheet {
+  border-top:
+    1px dashed
+    rgba(74,53,45,0.35);
+}
+
+.letter-sheet h2 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 32px;
+
+  margin:
+    8px 0 20px;
+}
+
+.letter-signoff {
+  margin-top: 35px;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   THEATRE
+========================================================= */
+
+#cafePage {
+  background:
+    #30251f;
+}
+
+.cafe-scene {
+  min-height: 100svh;
+
+  width: 100%;
+
+  background-size:
+    cover;
+
+  background-position:
+    center center;
+
+  background-repeat:
+    no-repeat;
+
+  position: relative;
+}
+
+.cafe-overlay {
+  min-height: 100svh;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  padding:
+    30px 18px 45px;
+
+  background:
+    linear-gradient(
+      transparent 45%,
+      rgba(255,245,225,0.45)
+    );
+}
+
+.theatre-overlay {
+  background:
+    linear-gradient(
+      transparent 35%,
+      rgba(25,18,13,0.40)
+    );
+}
+
+.cafe-message,
+.cafe-video-card {
+  width: 100%;
+
+  max-width: 470px;
+
+  padding: 28px;
+
+  background:
+    rgba(255,253,245,0.96);
+
+  border:
+    2px solid var(--dark);
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow:
+    8px 9px 0
+    rgba(74,53,45,0.18);
+}
+
+.cafe-message h2,
+.cafe-video-card h2 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 38px;
+
+  margin:
+    5px 0 10px;
+}
+
+.cafe-message p,
+.cafe-video-card p {
+  font-size: 19px;
+
+  line-height: 1.4;
+}
+
+.binocular-button {
+  margin-top: 10px;
+
+  padding:
+    13px 20px;
+
+  border:
+    2px solid var(--dark);
+
+  background:
+    var(--soft-blue);
+
+  color:
+    var(--dark);
+
+  border-radius:
+    30px;
+
+  font-size: 17px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 0
+    var(--dark);
+}
+
+.binocular-button:active {
+  transform:
+    translateY(3px);
+
+  box-shadow:
+    0 1px 0
+    var(--dark);
+}
+
+
+/* =========================================================
+   CINEMA END
+========================================================= */
+
+#videoEndingPage {
+  background:
+    radial-gradient(
+      circle at center,
+      #fffbed,
+      #dbecef 60%,
+      #c5d9bb
+    );
+}
+
+.simple-ending {
+  min-height: 100svh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.ending-stars {
+  color:
+    var(--yellow);
+
+  font-size: 28px;
+
+  letter-spacing: 8px;
+}
+
+.simple-ending h1 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(55px,15vw,90px);
+
+  margin:
+    10px 0;
+}
+
+.simple-ending p:not(.small-header) {
+  font-size: 28px;
+}
+
+
+/* =========================================================
+   ANTIQUE SHOP
+========================================================= */
+
+#antiquePage {
+  background:
+    #46392c;
+}
+
+.antique-scene {
+  min-height: 100svh;
+
+  width: 100%;
+
+  background-size:
+    cover;
+
+  background-position:
+    center center;
+
+  background-repeat:
+    no-repeat;
+
+  position: relative;
+}
+
+.antique-overlay {
+  min-height: 100svh;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding:
+    80px 20px 40px;
+
+  background:
+    rgba(255,244,220,0.20);
+}
+
+.antique-question,
+.gift-not-allowed {
+  width: 100%;
+
+  max-width: 520px;
+
+  padding: 30px;
+
+  background:
+    rgba(255,253,245,0.97);
+
+  border:
+    2px solid var(--dark);
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow:
+    9px 10px 0
+    rgba(74,53,45,0.2);
+}
+
+.antique-icon {
+  font-size: 42px;
+
+  margin-bottom: 5px;
+}
+
+.antique-question h2,
+.gift-not-allowed h2 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 43px;
+
+  margin:
+    8px 0;
+}
+
+.antique-question p,
+.gift-not-allowed p {
+  font-size: 20px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   GOODBYE
+========================================================= */
+
+#goodbyePage {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #fffbed,
+      #dbecef 55%,
+      #a8b994 100%
+    );
+}
+
+.goodbye-scene {
+  min-height: 100svh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding:
+    45px 22px;
+
+  position: relative;
+}
+
+.goodbye-scene::before {
+  content:
+    "☁       ✦       ☁";
+
+  position: absolute;
+
+  top: 12%;
+
+  left: 0;
+  right: 0;
+
+  color: white;
+
+  opacity: 0.7;
+
+  font-size: 25px;
+
+  letter-spacing: 15px;
+}
+
+.goodbye-stars {
+  color:
+    var(--yellow);
+
+  font-size: 27px;
+
+  margin-bottom: 25px;
+}
+
+.goodbye-scene h1 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size:
+    clamp(45px,12vw,75px);
+
+  line-height: 1;
+
+  margin:
+    10px 0 25px;
+}
+
+.goodbye-message {
+  max-width: 570px;
+
+  font-size: 20px;
+
+  line-height: 1.55;
+}
+
+.goodbye-message p {
+  margin:
+    0 0 18px;
+}
+
+.goodbye-final {
+  margin-top: 20px;
+}
+
+.goodbye-final h2 {
+  font-family:
+    "Playfair Display",
+    serif;
+
+  font-size: 35px;
+
+  margin:
+    0 0 5px;
+}
+
+.goodbye-final p {
+  font-size: 24px;
+
+  margin: 0;
+
+  color:
+    var(--red);
+}
+
+.goodbye-decoration {
+  margin-top: 30px;
+
+  color:
+    var(--pink);
+
+  font-size: 22px;
+
+  letter-spacing: 6px;
+}
+
+
+/* =========================================================
+   SPARKLES
+========================================================= */
+
+.building-sparkle {
+  position: fixed;
+
+  z-index: 9999;
+
+  color:
+    var(--yellow);
+
+  font-size: 24px;
+
+  pointer-events: none;
+
+  animation:
+    sparkleOut
+    0.9s
+    ease
+    forwards;
+}
+
+@keyframes sparkleOut {
+  from {
+    opacity: 1;
+
+    transform:
+      scale(0.5)
+      translateY(0);
+  }
+
+  to {
+    opacity: 0;
+
+    transform:
+      scale(1.5)
+      translateY(-25px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .welcome-content h1 {
+    font-size: 52px;
+  }
+
+  .welcome-message {
+    font-size: 18px;
+  }
+
+
+  /* PARCHMENT */
+
+  .parchment {
+    padding:
+      48px 27px 38px;
+  }
+
+  .parchment h2 {
+    font-size: 32px;
+  }
+
+  .royal-letter {
+    font-size: 17px;
+
+    line-height: 1.6;
+  }
+
+
+  /* VILLAGE */
+
+  .village {
+    gap:
+      22px 12px;
+  }
+
+  .building-label {
+    font-size: 7px;
+
+    padding:
+      5px 8px;
+  }
+
+
+  /* KITCHEN */
+
+  .cake-game {
+    grid-template-columns:
+      1fr;
+  }
+
+  .ingredient-column {
+    grid-template-columns:
+      repeat(4, 1fr);
+  }
+
+  .bowl-wrapper {
+    width:
+      min(300px,82vw);
+  }
+
+  .ingredient-button {
+    min-height: 90px;
+  }
+
+  .ingredient-button img {
+    height: 47px;
+  }
+
+  .ingredient-button span {
+    font-size: 10px;
+  }
+
+
+  /* BOOKSTORE */
+
+  .book-selection {
+    gap: 7px;
+  }
+
+  .mystery-book {
+    min-height: 145px;
+  }
+
+  .mystery-book span {
+    font-size: 8px;
+  }
+
+
+  /* LETTER */
+
+  .letter-sheet {
+    padding:
+      22px;
+
+    font-size: 17px;
+  }
+
+
+  /* THEATRE */
+
+  .cafe-message,
+  .cafe-video-card {
+    padding:
+      23px 18px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .village {
+    gap:
+      18px 8px;
+  }
+
+  .building-label {
+    font-size: 6px;
+  }
+
+  .ingredient-button {
+    min-height: 78px;
+  }
+
+  .ingredient-button img {
+    height: 38px;
+  }
+
+  .ingredient-button span {
+    font-size: 9px;
+  }
+
+  .bowl-wrapper {
+    width: 250px;
+  }
+
+  .mystery-book {
+    min-height: 125px;
+  }
+
+  .mystery-book span {
+    font-size: 7px;
+  }
+
+  .coupon h1,
+  .final-coupon h1 {
+    font-size: 36px;
+  }
+
+  .parchment {
+    padding:
+      45px 20px 35px;
+  }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONE SAFETY
+========================================================= */
+
+@media
+  (max-height: 550px)
+  and (orientation: landscape) {
+
+  .page {
+    min-height: 650px;
+  }
+
+  .welcome-content {
+    padding-top: 30px;
+  }
+
+  .village-sky {
+    padding-top: 30px;
+  }
+
+}
